@@ -1,23 +1,15 @@
-//array traversing
+//Ques-1 Second largest element
+//Given an array os size n print the second largest
+//distinct element from the array
 
-// const data = [1,2,3,4,5,6,7,77,88,56,66,455]
+// Input:[12,35,1,10,34,1] output-34
+const input = [12,35,1,10,34,1]
 
-//accessing every element of an array with their index
-// for(let i=0; i<data.length; i++){
-//     document.write(`Array ${i} is ${data[i]} <br />`)
+// My Approach without watching any video
+// const findSecondLargest = (array) => {
+//     let num = array.sort((a,b) => a-b)
+//     return num[num.length-2]
+
 // }
 
-//insert an element in an array
-const data = [1, 2, 3, 4, 5, 6, 7, 77, 88, 56, 66, 455];
-
-// Use splice to insert an element at index 5
-// data.splice(5, 0, 100);
-
-// document.write(data);
-// console.log(data);
-
-//Use for loop to add the element at the 3 index
-const newEl = 5
-for(let i=0; i<data.length; i++){
-    return data[i]
-}
+// console.log(findSecondLargest(input))
