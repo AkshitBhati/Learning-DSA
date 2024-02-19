@@ -46,3 +46,32 @@ const secondLargestOptimized = (arr) => {
 console.log(secondLargestOptimized([12,35,1,10,34,1]))
 //Time Complexity - O(n)
 //Space Complexity - O(1)
+
+//Rotate Array By K
+//Given an array of numbers, rotate the array to the right by K steps
+//where K is a non negative
+
+//Input nums:[1,2,3,4,5,6,7] k=3 output-> [5,6,7,1,2,3,4]
+//Input nums:[-1,-100,3,99] k=2  output-> [3,99,-1,-100]
+
+const rotatedArray = (nums, k) => {
+    let size = nums.length
+    if(k > size){
+        return k % size
+    }
+    const rotated = nums.splice(size - k, size) //O(n)
+    nums.unshift(...rotated) //O(n)
+
+    return nums
+}
+
+console.log(rotatedArray([1,2,3,4,5,6,7], 3))
+
+//Time Complexity - O(n)
+
+const rotateArrayOptimized = (nums, k) => {
+    let size = nums.length
+    if(k > size){
+        return k % size
+    }
+}
