@@ -146,3 +146,89 @@
 // }
 
 // console.log(titleCase("akshit"))
+
+//Given an array of numbers, write a function to find the largest and smallest numbers in the array. 
+
+// const findLargestAndSmallest = (arr) => {
+//     //method 1
+//     // let sortedArr = [...arr].sort((a, b) => a - b)
+//     // let largest = sortedArr[sortedArr.length -1]
+//     // let smallest = sortedArr[0]
+
+//     // const result = [largest, smallest]
+//     // return result
+
+//     //method 2
+//     let sortedarr = []
+//     let compare = 0
+
+//     for (let i=0; i<arr.length; i++){
+//         if(arr[i] > compare){
+//             sortedarr.push(compare = arr[i])
+//         }
+//     }
+//     const largest = sortedarr[sortedarr.length -1]
+//     const smallest = sortedarr[0]
+
+//     const result = [smallest,largest ]
+//     return result
+        
+// }
+
+// console.log(findLargestAndSmallest([1,23,44,456,7,8]))
+
+//Write a function that takes an array of integers as input and returns a new array with only the unique elements. 
+
+const arrayWithUniqueElements = (arr) => {
+   uniqueArr = []
+
+    for (let i=0; i<arr.length; i++){
+        if(!uniqueArr.includes(arr[i])){
+            uniqueArr.push(arr[i])
+        }
+    }
+    return uniqueArr
+}
+
+
+console.log(arrayWithUniqueElements([1,1,24,5,5,6,7,8,9]))
+// ADvanced Questions
+
+// Implement a function that takes two sorted arrays and merges them into a single sorted array without using any built-in sorting functions. 
+
+// const sortedArray = (arr1, arr2) => {
+//     let sortedArr = []
+//     let i=0
+//     let j=0
+
+// // Merge the arrays by comparing elements
+//     while(i<arr1.length && j<arr2.length){
+//         if(arr1[i] < arr2[j]){
+//             sortedArr.push(arr1[i])
+//             i++
+//         }
+//         else{
+//             sortedArr.push(arr2[j])
+//             j++
+//         }
+//     }
+
+//     // If any elements are remaining in arr1, add them to sortedArr
+//     while (i < arr1.length) {
+//         sortedArr.push(arr1[i]);
+//         i++;
+//     }
+
+//     // If any elements are remaining in arr2, add them to sortedArr
+//     while (j < arr2.length) {
+//         sortedArr.push(arr2[j]);
+//         j++;
+//     }
+
+
+//     return sortedArr
+// }
+
+// console.log(sortedArray([1,2,3,4], [4,5,6,11,7]))
+
+
