@@ -14,7 +14,7 @@ const factorial = (num) => {
 
 // console.log(factorial(5))
 
-//with recurrsion
+//with Recursion
 
 const recurrsiveFactorial = (num) => {
     if(num <= 0){
@@ -39,7 +39,7 @@ const rangeWithout = (start, end) => {
 
 // console.log(rangeWithout(0,5))
 
-//with recurrsion
+//with Recursion
 const range = (start, end) => {
     if(end < start){
         return []
@@ -56,7 +56,7 @@ const range = (start, end) => {
 //given an array of integer x, return true if x is a palindorme and false otherwise
 //Input: x = 121 ----->>>> output: true
 
-//without recurssion
+//without Recursion
 const checkPalindrome = (arr) => {
     let palindrom = []
     for (let i=0; i<arr.length; i++){
@@ -69,6 +69,88 @@ const checkPalindrome = (arr) => {
     return palindrom
 }
 
-console.log(checkPalindrome([121,456,789,321,232]))
+// console.log(checkPalindrome([121,456,789,321,232]))
+
+//with Recursion
+const isPalindrome = (arr) => {
+    // Base case: if array has 0 or 1 element, it's a palindrome
+    if (arr.length <= 1) {
+        return true;
+    }
+
+    // Check if the first and last elements are equal
+    if (arr[0] === arr[arr.length - 1]) {
+        // Recur with the subarray formed by removing the first and last elements
+        return isPalindrome(arr.slice(1, arr.length - 1));
+    } else {
+        // If the first and last elements are different, it's not a palindrome
+        return false;
+    }
+};
+
+// Example usage:
+// console.log(isPalindrome([1, 2, 3, 2, 1]))
+// console.log(isPalindrome([1, 2, 3, 4, 5]))
+
+//Ques 4 Fibonacci Number
+
+//without Recursion 
+
+const FibonacciSeries = (numTerms) => {
+    let series = []
+    let a = 0
+    let b = 1
+
+    for (let  i=0 ;i<=numTerms; i++){
+        series.push(a)
+        let next = a + b
+        a = b
+        b = next
+    }
+
+    return series[series.length - 1]
+}
 
 
+// console.log(FibonacciSeries(10))
+
+//with recurssion
+const recursionFibonacci = (num) => {
+    if(num <= 1){
+        return num
+    }
+    else {
+        let number = recursionFibonacci(num-1) + recursionFibonacci(num - 2)
+        return number
+    }    
+}
+
+// console.log(recursionFibonacci(10))
+
+//Reverse a string
+const reverseStr = (str) => {
+    let reverse = ''
+    for (let i=str.length - 1; i>=0; i--){
+        reverse += str[i]
+    }
+    return reverse
+} 
+
+// console.log(reverseStr("hi"))
+
+
+const reverseStrRecursively = (str) => {
+    if (str === "") {
+        return "";
+    } else {
+        return reverseStrRecursively(str.substr(1)) + str.charAt(0);
+    }
+}
+
+// console.log(reverseStrRecursively("akshit"));
+
+//Subsets ( Backtracking Algorithm using recursion )
+//given an integer array nums of unique elements, return all the possible subsets (the power set)
+//The solution set must not contain duplicate subsets. Return the solution in any order
+
+//Input: [1,2,3] ----->>>>> Output:[[], [1], [1,2]]
