@@ -1,48 +1,48 @@
 // Write a JavaScript program to find the maximum number in an array. 
 
-// const arr = [1,2,3,45,15,12]
+const arr = [1,2,3,45,15,12]
 
-// const findMax = (arr) => {
-//     let max = 0
-//     for (let i=0; i<arr.length; i++){
-//         if(arr[i] > max){
-//             max = arr[i]
-//         }
-//     }
-//     return max
-// }
+const findMax = (arr) => {
+    let max = 0
+    for (let i=0; i<arr.length; i++){
+        if(arr[i] > max){
+            max = arr[i]
+        }
+    }
+    return max
+}
 
 // console.log(findMax(arr))
 
 //Write a JavaScript function to check if a given string is a palindrome (reads the same forwards and backwards). 
 
-// const checkPalindrome = (str) => {
-//     if(typeof str !== "string"){
-//         console.log("Palindorme cannot be find for these data types")
-//         return
-//     }
-//     const reverseStr = str.split('').reverse().join('')
+const checkPalindrome = (str) => {
+    if(typeof str !== "string"){
+        console.log("Palindorme cannot be find for these data types")
+        return
+    }
+    const reverseStr = str.split('').reverse().join('')
 
-//     if(str.toLowerCase() === reverseStr.toLowerCase()){
-//         console.log("It is a palidrome")
-//     }
-//     else{
-//         console.log("The string is not palindrome")
-//     }
-// }
+    if(str.toLowerCase() === reverseStr.toLowerCase()){
+        console.log("It is a palidrome")
+    }
+    else{
+        console.log("The string is not palindrome")
+    }
+}
 
 // checkPalindrome("akshit")
 
 
 //Reverse a string without using reverse method
 
-// const reverseStr = (str) => {
-//     let reverse = ''
-//     for (let i=str.length-1; i>=0; i--){
-//         reverse += str[i]
-//     }
-//     return reverse
-// }
+const reverseStr = (str) => {
+    let reverse = ''
+    for (let i=str.length-1; i>=0; i--){
+        reverse += str[i]
+    }
+    return reverse
+}
 
 // console.log(reverseStr("naman"))
 
@@ -179,19 +179,19 @@
 
 //Write a function that takes an array of integers as input and returns a new array with only the unique elements. 
 
-const arrayWithUniqueElements = (arr) => {
-   uniqueArr = []
+// const arrayWithUniqueElements = (arr) => {
+//    uniqueArr = []
 
-    for (let i=0; i<arr.length; i++){
-        if(!uniqueArr.includes(arr[i])){
-            uniqueArr.push(arr[i])
-        }
-    }
-    return uniqueArr
-}
+//     for (let i=0; i<arr.length; i++){
+//         if(!uniqueArr.includes(arr[i])){
+//             uniqueArr.push(arr[i])
+//         }
+//     }
+//     return uniqueArr
+// }
 
 
-console.log(arrayWithUniqueElements([1,1,24,5,5,6,7,8,9]))
+// console.log(arrayWithUniqueElements([1,1,24,5,5,6,7,8,9]))
 // ADvanced Questions
 
 // Implement a function that takes two sorted arrays and merges them into a single sorted array without using any built-in sorting functions. 
