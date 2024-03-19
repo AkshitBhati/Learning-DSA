@@ -173,7 +173,6 @@ MyQueue.prototype.dequeue = function(){
     
     return this.stack2.pop()
 
-    
 }
 
 MyQueue.prototype.front = function(){
@@ -196,4 +195,5 @@ queue.enqueue(3);
 queue.enqueue(6);
 queue.enqueue(7);
 queue.dequeue();
-console.log(queue.front());
+// console.log(queue.front());
+
