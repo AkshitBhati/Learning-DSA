@@ -131,7 +131,7 @@ let totalHammingDistanceNaive = (nums) => {
     return distance;
 };
 //time complexity of this O(n^2) so it is not a good solution
-console.log(totalHammingDistanceNaive([4, 14, 2])); // Output: 6
+// console.log(totalHammingDistanceNaive([4, 14, 2])); // Output: 6
 
 
 var totalHammingDistance = function(nums) {
@@ -176,3 +176,45 @@ var longestCommonPrefix = function(strs) {
 
     return prefix;
 };
+
+// Ques 4 - Valid Anagram
+// An Anagram is a word or phrase formed by rearranging the letters of
+// a different word or phrase, using all the original letters exactly once.
+
+// Input: (s = "anagram"), (t = "nagaram"); ----->>>>>   Output: true;
+// Input: (s = "rat"), (t = "car");         ----->>>>>   Output: false;
+
+
+const validAnagram = (x, y) => {
+     x = x.split("").sort().join('')
+     y = y.split("").sort().join('')
+
+     if(x.length !== y.length) return false
+     
+     return x === y 
+    
+}
+
+// console.log(validAnagram("akshit", "abcdef"))
+
+//optimized solution for this
+const isAnagram = function(x,y){
+    if(x.length !== y.length) return false
+
+    let obj1 = {}
+    let obj2 = {}
+
+    for (let i=0; i<x.length; i++){
+        obj1[x[i]] = (obj1[x[i]] || 0) + 1
+        obj2[y[i]] = (obj2[y[i]] || 0) + 1
+
+    }
+
+    for (let key in obj1 ){
+        if(obj1[key] !== obj2[key])  return false
+    }
+
+    return true
+}
+
+console.log(isAnagram("akshit", "kshita"))
