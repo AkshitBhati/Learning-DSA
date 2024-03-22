@@ -32,9 +32,35 @@ const binarySearch = (nums, target) => {
     }
     return -1
 }
-
+//Time complexity - O(n)
 // console.log(binarySearch([-1,0,3,5,9,12], 0))
 
+//for time complexity of O(log n)
+
+const search = function(nums, target) {
+    let start = 0
+    let end = nums.length -1
+
+    while(start <= end){
+        let mid = Math.floor((start + end) /2)
+
+        if(nums[mid] === target){
+            return mid
+        }
+
+        else if(nums[mid] < target){
+            start = mid + 1
+        }
+
+        else {
+            end = mid - 1
+        }
+    }
+
+    return -1
+};
+
+console.log(search([-1,0,3,5,9,12], 9))
 //Find First and Last Position of Element in Sorted Array
 
 // Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
@@ -151,4 +177,4 @@ const singleNonDuplicate = (nums) => {
     return nums[left]
 }
 
-console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]))
+// console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]))
