@@ -60,7 +60,7 @@ const search = function(nums, target) {
     return -1
 };
 
-console.log(search([-1,0,3,5,9,12], 9))
+// console.log(search([-1,0,3,5,9,12], 9))
 //Find First and Last Position of Element in Sorted Array
 
 // Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
@@ -178,3 +178,56 @@ const singleNonDuplicate = (nums) => {
 }
 
 // console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]))
+
+
+ // Given an array arr of positive integers sorted in a strictly increasing order, and an integer k.
+
+    // Return the kth positive integer that is missing from this array.
+
+//     Input: arr = [2,3,4,7,11], k = 5
+//     Output: 9
+
+const findKthPositive = function(arr, k) {
+    let count = 0;
+    let i = 0;
+
+    while (count < k) {
+        i++;
+        console.log("this is i",i)
+        if (arr.includes(i)) {
+            continue; // Skip if current number is present in the array
+        }
+        console.log("this is count",count)
+        count++;
+    }
+
+    return i;
+};
+//time complexity O(log n) and is a binary solution fully optimized
+// console.log(findKthPositive([2,3,4,7,11], 5)); // Output: 9
+
+//Maximum Count of Positive Integer and Negative Integer
+//Given an array nums sorted in non-decreasing order, return the maximum between the number of positive integers and the number of negative integers.
+
+// In other words, if the number of positive integers in nums is pos and the number of negative integers is neg, then return the maximum of pos and neg.
+
+//Input: nums = [-2,-1,-1,1,2,3]
+// Output: 3
+
+const maximumCount = function (arr) {
+    let low = 0
+    let high = arr.length -1
+
+    while(low < high){
+        let mid = Math.floor((low + high) / 2)
+
+        if(arr[mid] < 0){
+            low = mid
+        }
+        else high = mid -1
+    }
+
+    return arr[0] >= 0 ? 0 : low + 1
+}
+
+console.log(maximumCount([-2,-1,-1,1,2,3]))

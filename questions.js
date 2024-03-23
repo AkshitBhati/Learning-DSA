@@ -232,3 +232,17 @@ const sortedArray = (arr1, arr2) => {
 // console.log(sortedArray([1,2,3,4], [4,5,6,11,7]))
 
 
+//function called same, accepts 2 arrays. Function should return true if the second array contains the sq of elements of 1st arr
+
+const same = (arr1, arr2) => {
+
+    if(arr1.length !== arr2.length) return false
+
+    for (let i=0; i<arr1.length; i++){
+        if(!arr1.includes(Math.sqrt(arr2[i]))) return false
+
+    }
+    return true
+}
+
+console.log(same([1,2,3], [9,1,1]))

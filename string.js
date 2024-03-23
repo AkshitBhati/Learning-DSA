@@ -246,22 +246,8 @@ var firstPalindrome = function(words) {
 // Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8
 // Output: 13
 
-var kthSmallest = function(matrix, k) {
-    let flatMatrix = matrix.flat();
-    let el;
 
-    for (let i = 0; i < flatMatrix.length; i++) {
-        if (i === k - 1 ) { // Correct the index to check for k-th smallest element
-            el = flatMatrix[i];
-            break; 
-        }
-    }
 
-    return el;
-};
-
-// Test case
-// console.log(kthSmallest([[1,5,9],[10,11,13],[12,13,15]], 8)); // Output: 13
 var kthSmallest = function(matrix, k) {
     let flatMatrix = matrix.flat().sort((a,b) => a-b)
     let el
@@ -273,3 +259,7 @@ var kthSmallest = function(matrix, k) {
     }
     return el
 };
+
+// Test case
+// console.log(kthSmallest([[1,5,9],[10,11,13],[12,13,15]], 8)); // Output: 13
+
