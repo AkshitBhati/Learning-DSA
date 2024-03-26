@@ -49,4 +49,23 @@ const maxSlidingWindow = (nums, k) => {
     return result;
 }
 
-console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+
+//write a function maxSubarraySum which accepts an array of interges and a number called n. The function should calculate the max sum of n consecutive el in the arr
+
+const maxSum = (arr, n) => {
+    let max = -Infinity
+
+    for (let i=0; i<arr.length; i++){
+        let temp = 0
+        for (let j=0; j<n; j++){
+            temp += arr[i+j]
+        }
+        if(temp > max){
+            max = temp
+        }
+    }
+    return max
+}
+
+console.log(maxSum([4,2,1,6],4));

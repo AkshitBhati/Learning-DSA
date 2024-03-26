@@ -230,4 +230,69 @@ const maximumCount = function (arr) {
     return arr[0] >= 0 ? 0 : low + 1
 }
 
-console.log(maximumCount([-2,-1,-1,1,2,3]))
+// console.log(maximumCount([-2,-1,-1,1,2,3]))
+
+//write a function of sumZero which accepts a sorted array of intergers. The function should find the first pair which return the sum zero. Return an array including both value or return undefined
+
+const sumZeroNaive = (arr) => {
+    for (let i=0; i<arr.length; i++){
+        for (let j=i+1; j<arr.length; j++){
+            if(arr[i] + arr[j] === 0){
+                return [arr[i], arr[j]]
+            }
+        }
+    }
+}
+
+// console.log(sumZeroNaive([-3,-2,-1,0,1,2,3,5]))
+
+const sumZero = (arr) => {
+    let left = 0
+    let right = arr.length - 1
+
+    while(left < right){
+        let sum = arr[left] + arr[right]
+
+        if(sum === 0){
+            return [arr[left], arr[right]]
+        }
+
+        else if(sum > 0){
+             right --
+        }
+
+        else{
+            left ++ 
+        }
+    }
+}
+
+// console.log(sumZero([-3,-2,-1,0,1,2,3]))
+
+//count unique elements in the sorted array
+//Input:[1,2,3,4,4,4,7,7,12,12,13]
+//output:7
+
+
+const uniqueElementNaive = (arr) => {
+    const unique = new Set([...arr])
+    return unique.size //Set method does not have length property use size insted
+}
+
+// console.log(uniqueElementNaive([1,2,3,4,4,4,7,7,12,12,13]))
+
+const uniqueElement = (arr) => {
+    let unique = []
+
+    for (let i=0; i<arr.length; i++){
+        let left = i
+        let right = i+1
+
+        if(arr[left] !== arr[right]){
+            unique.push(arr[i])
+        }
+    }
+    return unique.length
+}
+
+console.log(uniqueElement([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); // Output: 7

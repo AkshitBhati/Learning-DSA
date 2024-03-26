@@ -192,41 +192,60 @@ const arrayWithUniqueElements = (arr) => {
 
 
 // console.log(arrayWithUniqueElements([1,1,24,5,5,6,7,8,9]))
-// ADvanced Questions
+
+//find duplicate element in the array
+
+const findDuplicate = (arr) => {
+    const count = {}
+    const duplicate = []
+
+    for (let i=0; i<arr.length; i++){
+        count[arr[i]] = (count[arr[i]] || 0) + 1
+    }
+    
+    for (let key in count){
+        if(count[key] > 1){
+            duplicate.push(key)
+        }
+    }
+    return duplicate
+}
+
+// console.log(findDuplicate([1,2,3,3]))
+
+//trying using binary search
+const findDuplicate2 = (arr) => {
+    arr.sort((a,b) => a-b)
+    const duplicate = []
+
+    for (let i=0; i<arr.length; i++){
+        let left = arr[i]
+        let right = arr[i+1]
+
+        if(left === right){
+            duplicate.push(arr[i])
+        }
+    }
+    return duplicate
+}
+
+// console.log(findDuplicate2([3,3,3,3]))
 
 // Implement a function that takes two sorted arrays and merges them into a single sorted array without using any built-in sorting functions. 
 
-const sortedArray = (arr1, arr2) => {
-    let sortedArr = []
-    let i=0
-    let j=0
+//using bubble sort
 
-// Merge the arrays by comparing elements
-    while(i<arr1.length && j<arr2.length){
-        if(arr1[i] < arr2[j]){
-            sortedArr.push(arr1[i])
-            i++
-        }
-        else{
-            sortedArr.push(arr2[j])
-            j++
+const mergerArray = (arr1, arr2) => {
+    let arr = arr1.concat(arr2)
+
+    for (let i=0; i<arr.length; i++) {
+        for (let j=0; j<arr.length-1; j++){
+            if(arr[j] > arr[j+1]){
+                [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            }
         }
     }
-
-    // If any elements are remaining in arr1, add them to sortedArr
-    while (i < arr1.length) {
-        sortedArr.push(arr1[i]);
-        i++;
-    }
-
-    // If any elements are remaining in arr2, add them to sortedArr
-    while (j < arr2.length) {
-        sortedArr.push(arr2[j]);
-        j++;
-    }
-
-
-    return sortedArr
+    return arr
 }
 
-// console.log(sortedArray([1,2,3,4], [4,5,6,11,7]))
+// console.log(mergerArray([1,3,2,4],[7,8,5,6]))
