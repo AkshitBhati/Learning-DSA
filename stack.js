@@ -42,18 +42,18 @@ stack.push(10);
 stack.push(69);
 stack.push(420);
 
-console.log(stack.size());
+// console.log(stack.size());
 
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
 
-console.log(stack.peek());
+// console.log(stack.peek());
 
-console.log(stack.isEmpty());
+// console.log(stack.isEmpty());
 
-console.log(stack.size());
+// console.log(stack.size());
 
 //Ques 1:- Given an input string s, revserse the order of the words
 
@@ -149,7 +149,8 @@ function isValid(s) {
   }
   
   const string1 = "()";
-  console.log(isValid(string1));
+  // console.log(isValid(string1));
   
   // Time Complexity = O(n)
   // Space Complexity = O(n)
+

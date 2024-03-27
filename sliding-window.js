@@ -68,4 +68,62 @@ const maxSum = (arr, n) => {
     return max
 }
 
-console.log(maxSum([4,2,1,6],4));
+// console.log(maxSum([4,2,1,6],4));
+
+//Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
+
+//Input: nums = [10,5,2,6], k = 100
+// Output: 8
+
+const numSubarrayProductLessThanK = (nums, k) => {
+    if(k <= 1){
+        return 0
+    }
+    let count = 0
+    let product = 1
+    let left = 0
+
+    for (let right = 0; right<nums.length; right++){
+        product *= nums[right]
+
+        if(product >= k){
+            product /= nums[left]
+            left++
+        }
+        count += right - left + 1
+    }
+    return count
+}
+
+console.log(numSubarrayProductLessThanK([10,5,2,6], 100))
+
+//for counting all the subarrays
+function subarraysProductLessThanK(nums, k) {
+    if (k <= 1) {
+        return [];
+    }
+    
+    const result = [];
+    let product = 1;
+    let left = 0;
+    
+    for (let right = 0; right < nums.length; right++) {
+        product *= nums[right];
+        while (product >= k) {
+            product /= nums[left];
+            left++;
+        }
+        // All subarrays from left to right are valid
+        for (let i = right; i >= left; i--) {
+            result.push(nums.slice(i, right + 1));
+        }
+    }
+    
+    return result;
+}
+
+// Test the function
+let nums = [10, 5, 2, 6];
+let k = 100;
+// console.log(subarraysProductLessThanK(nums, k));
+
