@@ -24,4 +24,39 @@ const sortPeople = (names,heights) => {
     return sortedNames
 }
 
-console.log(sortPeople(["Alice","Bob","Bob"], [155,185,150]))
+// console.log(sortPeople(["Alice","Bob","Bob"], [155,185,150]))
+
+//two sum
+
+const twoSum = function (nums, target) {
+    let map = new Map()
+
+    for (let i=0; i<nums.length; i++){
+        let findNum = target - nums[i]
+        if(map.has(findNum)){
+            return [map.get(findNum), i]
+
+        }
+        map.set(nums[i], i)
+    }
+    return []
+}
+
+// console.log(twoSum([2,7,11,15], 9))
+
+//firts positive integer in an array
+
+const firstPositiveInter = function(nums) {
+    let numsSet = new Set(nums)
+
+    let i= 1
+    while(true){
+        if(!numsSet.has(i)){
+            return i
+        }
+        i++
+    }
+
+}
+
+// console.log(firstPositiveInter([1,2,0]))

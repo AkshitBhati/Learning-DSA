@@ -290,4 +290,32 @@ const mergedString = (word1, word2) => {
     return merged
 }
 
-console.log(mergedString("abc", "pq"))
+// console.log(mergedString("abc", "pq"))
+
+//  Find the Index of the First Occurrence in a String
+//Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+// Input: haystack = "sadbutsad", needle = "sad"
+// Output: 0
+
+const strStr = function (haystack, needle){
+    if(needle === '') return 0
+
+    for (let i=0; i<haystack.length; i++){
+        let found = true
+
+        for(let j=0;j<needle; j++){
+            if(haystack[i+j] !== needle[j]){
+                found = false
+                break;
+            }
+        }
+
+        if(found){
+            return i
+        }
+    }
+    return -1
+}
+
+console.log(strStr("sadbutsad", "sad"))
